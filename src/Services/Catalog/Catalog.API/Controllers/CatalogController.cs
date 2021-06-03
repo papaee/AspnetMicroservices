@@ -46,7 +46,7 @@ namespace Catalog.API.Controllers
         }
 
         [HttpGet]
-        [Route("[action/[category]", Name = "GetProductByCategory")]
+        [Route("[action]/{category}", Name = "GetProductByCategory")]
         public async Task<ActionResult<IEnumerable<Product>>> GetProductByCategory(string category)
         {
             var products = await _repository.GetProductByCategory(category);
